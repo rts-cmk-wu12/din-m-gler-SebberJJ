@@ -12,6 +12,7 @@ export default function CoworkerContainer() {
                 <Coworkers />
                 <Coworkers />
             </div>
+            <a href="#" className="bg-blue-950 text-white py-2 px-4">Se alle mæglere</a>
         </div>
     )
 }
