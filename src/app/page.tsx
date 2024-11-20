@@ -1,10 +1,10 @@
 import Article from "@/components/Article";
 import CoworkerContainer from "@/components/CoworkerContainer";
-import Coworkers from "@/components/Coworkers";
 import InfoCard from "@/components/InfoCards";
 import Newsletter from "@/components/Newsletter";
 import SearchContainer from "@/components/SearchContainer";
 import SelectedHomesContainer from "@/components/SelectedHomesContainer";
+import UpdateOnAppsContainer from "@/components/UpdateOnAppsContainer";
 
 export default function Home() {
   return (
@@ -22,6 +22,9 @@ export default function Home() {
       </section>
       <section className="flex pt-16">
         <CoworkerContainer />
+      </section>
+      <section className="flex justify-center items-center bg-gray-800 w-full pt-16 mb-20">
+        <UpdateOnAppsContainer />
       </section>
     </main>
   )
