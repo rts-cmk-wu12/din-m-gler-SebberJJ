@@ -1,4 +1,6 @@
 import Article from "@/components/Article";
+import CoworkerContainer from "@/components/CoworkerContainer";
+import Coworkers from "@/components/Coworkers";
 import InfoCard from "@/components/InfoCards";
 import Newsletter from "@/components/Newsletter";
 import SearchContainer from "@/components/SearchContainer";
@@ -17,6 +19,9 @@ export default function Home() {
       </section>
       <section className="bg-gray-800 w-full">
         <Newsletter />
+      </section>
+      <section className="flex pt-16">
+        <CoworkerContainer />
       </section>
     </main>
   )
