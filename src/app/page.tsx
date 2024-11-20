@@ -1,5 +1,6 @@
 import Article from "@/components/Article";
 import CoworkerContainer from "@/components/CoworkerContainer";
+import Footer from "@/components/Footer";
 import InfoCard from "@/components/InfoCards";
 import Newsletter from "@/components/Newsletter";
 import SearchContainer from "@/components/SearchContainer";
@@ -8,6 +9,7 @@ import UpdateOnAppsContainer from "@/components/UpdateOnAppsContainer";
 
 export default function Home() {
   return (
+    <>
     <main className="flex flex-col justify-center items-center">
       <SearchContainer />
       <section className="flex flex-col items-center">
@@ -27,5 +29,7 @@ export default function Home() {
         <UpdateOnAppsContainer />
       </section>
     </main>
+    <Footer />
+    </>
   )
 }
