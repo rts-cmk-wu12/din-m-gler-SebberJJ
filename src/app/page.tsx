@@ -1,11 +1,10 @@
-import Article from "@/components/Article";
-import CoworkerContainer from "@/components/CoworkerContainer";
-import Footer from "@/components/Footer";
-import InfoCard from "@/components/InfoCards";
-import Newsletter from "@/components/Newsletter";
-import SearchContainer from "@/components/SearchContainer";
-import SelectedHomesContainer from "@/components/SelectedHomesContainer";
-import UpdateOnAppsContainer from "@/components/UpdateOnAppsContainer";
+import Article from "@/components/frontpage/Article";
+import CoworkerContainer from "@/components/frontpage/CoworkerContainer";
+import InfoCard from "@/components/frontpage/InfoCards";
+import Newsletter from "@/components/frontpage/Newsletter";
+import SearchContainer from "@/components/frontpage/SearchContainer";
+import SelectedHomesContainer from "@/components/frontpage/SelectedHomesContainer";
+import UpdateOnAppsContainer from "@/components/frontpage/UpdateOnAppsContainer";
 
 export default function Home() {
   return (
@@ -29,7 +28,6 @@ export default function Home() {
         <UpdateOnAppsContainer />
       </section>
     </main>
-    <Footer />
     </>
   )
 }
