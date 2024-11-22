@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { BiBluetooth } from "react-icons/bi";
 import { LuDot } from "react-icons/lu";
 
 interface Agent {
@@ -69,7 +70,7 @@ interface Agent {
     remodel: number;
     rooms: string;
     type: string;
-  }  
+  }
 
 export default function HomesForSale() {
     const [houses, setHouses] = useState<Home[]>([])
@@ -88,18 +89,25 @@ export default function HomesForSale() {
         fetchCategories()
       }, [])
 
+      const energyLabel: Record<string, string> = {
+        A: "bg-green-600",
+        B: "bg-yellow-300",
+        C: "bg-orange-400",
+        D: "bg-red-500",
+      };
+
     return (
         <section className="grid grid-cols-2 grid-rows-4 gap-4 justify-center items-center pt-24">
             {houses.map((house: Home) => (
                 <article key={house.id} className="flex flex-col bg-white w-fit pb-4 shadow-md">
                 <figure>
-                    <Image src={house.images[0].url} alt={house.adress1} width={400} height={267} style={{ width: "400px", maxHeight: "267px" }} />
+                    <Image src={house.images[0].url} alt={house.adress1} width={450} height={267} style={{ width: "450px", maxHeight: "267px" }} />
                 </figure>
                 <figcaption className="py-2">
                     <h3 className="font-bold px-4">{house.adress1}</h3>
                 </figcaption>
                 <div className="flex flex-col gap-2 px-4 py-2">
-                    <span>4000 Roskilde</span>
+                    <span>{house.postalcode} {house.city}</span>
                     <div className="flex flex-row w-full">
                             <strong className="flex items-center">
                                 {house.type} <LuDot /> 
@@ -111,14 +119,15 @@ export default function HomesForSale() {
                 </div>
                 <div className="flex items-center justify-between px-4 pt-4 border-t-2">
                     <div className="flex items-center justify-center gap-4">
-                    <span className="px-2 bg-yellow-300 text-white">A</span>
-                    <p>5 værelser * 156 m2</p>
+                    <span className={`px-2 ${energyLabel[house.energylabel]} text-white`}>
+                      {house.energylabel}
+                    </span>
+                    <p className="flex items-center">{house.rooms} værelser <LuDot /> {house.livingspace} m2</p>
                     </div>
-                    <p className="font-bold text-lg">Kr. 4.567.432</p>
+                    <p className="font-bold text-lg">Kr. {house.price}</p>
                 </div>
                 </article>
             ))}
           </section>
-          
     )
 }
