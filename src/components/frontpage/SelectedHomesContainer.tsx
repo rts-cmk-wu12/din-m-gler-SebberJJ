@@ -1,4 +1,4 @@
-import HomeCard from "./HomeCard";
+import HomeCard from "../HomeCard";
 
 export default function SelectedHomesContainer() {
     return (
