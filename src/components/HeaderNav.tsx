@@ -12,7 +12,7 @@ export default function HeaderNav() {
                     <Link href="/houses">Boliger til salg</Link>
                 </li>
                 <li>
-                    <Link href="/coworkers">Mæglere</Link>
+                    <Link href="/agents">Mæglere</Link>
                 </li>
                 <li>
                     <Link href="/favorit">Mine favoritter</Link>
