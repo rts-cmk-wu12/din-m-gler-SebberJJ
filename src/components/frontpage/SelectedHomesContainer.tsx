@@ -1,3 +1,4 @@
+import Link from "next/link";
 import HomeCard from "../HomeCard";
 
 export default function SelectedHomesContainer() {
@@ -13,7 +14,7 @@ export default function SelectedHomesContainer() {
                 <HomeCard />
                 <HomeCard />
             </div>
-            <a href="#" className="bg-blue-950 text-white py-2 px-4">Se alle boliger</a>
+            <Link href="/houses" className="bg-blue-950 text-white py-2 px-4">Se alle boliger</Link>
         </div>
     )
 }

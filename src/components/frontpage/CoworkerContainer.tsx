@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Coworkers from "./Coworkers";
 
 export default function CoworkerContainer() {
@@ -12,7 +13,7 @@ export default function CoworkerContainer() {
                 <Coworkers />
                 <Coworkers />
             </div>
-            <a href="#" className="bg-blue-950 text-white py-2 px-4">Se alle mæglere</a>
+            <Link href="/agents" className="bg-blue-950 text-white py-2 px-4">Se alle mæglere</Link>
         </div>
     )
 }

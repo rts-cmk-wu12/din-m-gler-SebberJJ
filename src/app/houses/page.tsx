@@ -1,13 +1,11 @@
-import FilterSearch from "@/components/houses/FilterSearch";
-import Headline from "@/components/houses/Headline";
+import Headline from "@/components/Headline";
 import HomesForSale from "@/components/houses/HomesForSale";
 
 export default function Houses() {
     return (
         <main className="flex flex-col justify-center items-center">
-            <Headline />
+            <Headline title="Boliger til salg" />
             <section className="flex flex-col justify-center items-center">
-                <FilterSearch />
                 <HomesForSale />
             </section>
         </main>
