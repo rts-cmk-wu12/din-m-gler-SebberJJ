@@ -2,6 +2,7 @@
 
 import HouseDetail1 from "@/components/houseDetails/HouseDetail1";
 import HouseDetail2 from "@/components/houseDetails/HouseDetail2";
+import HouseDetail3 from "@/components/houseDetails/HouseDetail3";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 
@@ -12,7 +13,6 @@ interface Agent {
     email: string;
     image: {
         url: string;
-        alt: string;
     };
 }
 
@@ -72,7 +72,7 @@ interface Home {
     type: string;
 }
 
-export default function House({ params }: { params: { id: string } }) {
+export default function House({ params }: { params: { id: string }; home: Home; }) {
     const [house, setHouse] = useState<Home | null>(null)
 
     const fetchHouse = async () => {
@@ -103,7 +103,24 @@ export default function House({ params }: { params: { id: string } }) {
                         <Image className="w-screen h-[30rem] object-cover object-bottom" src={house.images[0].url} alt={house.adress1} width={house.images[0].width} height={house.images[0].height} />
                     </div>
                     <HouseDetail1 address={house.adress1} by={house.city + ` ${house.postalcode}`} price={"Kr. " + house.price.toLocaleString()} />
-                    <HouseDetail2 />
+                    <HouseDetail2
+                        id={house.id}
+                        livingspace={house.livingspace}
+                        lotsize={house.lotsize}
+                        rooms={house.rooms}
+                        basementsize={house.basementsize}
+                        built={house.built}
+                        remodel={house.remodel}
+                        energylabel={house.energylabel}
+                        payment={"Kr. " + house.payment.toLocaleString()}
+                        gross={"Kr. " + house.gross.toLocaleString()}
+                        netto={"Kr. " + house.netto.toLocaleString()}
+                        cost={"Kr. " + house.cost.toLocaleString()}
+                    />
+                    <HouseDetail3
+                        description={house.description}
+                        agent={house.agent}
+                    />
                 </>
             ) : (
                 <p>Indlæser husdata...</p>
