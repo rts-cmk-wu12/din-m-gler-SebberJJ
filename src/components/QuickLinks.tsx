@@ -6,22 +6,22 @@ export default function QuickLinks() {
                 <nav>
                     <ul className="space-y-2">
                         <li>
-                            <a href="" className="text-gray-600 hover:text-gray-900 hover:underline">
+                            <a href="" className="text-gray-600 hover:text-orange-400 hover:underline">
                                 Boliger til salg
                             </a>
                         </li>
                         <li>
-                            <a href="" className="text-gray-600 hover:text-gray-900 hover:underline">
+                            <a href="" className="text-gray-600 hover:text-orange-400 hover:underline">
                                 Mæglere
                             </a>
                         </li>
                         <li>
-                            <a href="" className="text-gray-600 hover:text-gray-900 hover:underline">
+                            <a href="" className="text-gray-600 hover:text-orange-400 hover:underline">
                                 Kontakt os
                             </a>
                         </li>
                         <li>
-                            <a href="" className="text-gray-600 hover:text-gray-900 hover:underline">
+                            <a href="" className="text-gray-600 hover:text-orange-400 hover:underline">
                                 Log ind / bliv bruger
                             </a>
                         </li>

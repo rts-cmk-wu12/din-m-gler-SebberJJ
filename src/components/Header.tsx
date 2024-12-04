@@ -2,6 +2,7 @@ import { FaRegPaperPlane } from "react-icons/fa";
 import { FaPhoneAlt } from "react-icons/fa";
 import { FaUser } from "react-icons/fa";
 import HeaderNav from "./HeaderNav";
+import Link from "next/link";
 
 export default function Header()  {
     return (
@@ -12,16 +13,16 @@ export default function Header()  {
                 <div className="flex gap-4">
                     <div className="flex items-center gap-2">
                         <FaRegPaperPlane color="white"/>
-                        <p className="text-white">4000@dinmaegler.com</p>
+                        <a className="text-white hover:text-orange-400" href="mailto:4000@dinmaegler.dk">4000@dinmaegler.com</a>
                     </div>
                     <div className="flex items-center gap-2">
                         <FaPhoneAlt color="white" />
-                        <p className="text-white">+45 7070 4000</p>
+                        <a className="text-white hover:text-orange-400" href="tel:70704000">+45 7070 4000</a>
                     </div>
                 </div>
                 <div className="flex items-center gap-2">
                     <FaUser color="white" />
-                    <p className="text-white">Login</p>
+                    <Link className="text-white hover:text-orange-400" href="/login">Login</Link>
                 </div>
             </div>
             <HeaderNav />
