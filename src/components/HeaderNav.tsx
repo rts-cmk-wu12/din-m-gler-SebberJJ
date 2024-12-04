@@ -8,16 +8,16 @@ export default function HeaderNav() {
                 <Image src="/logo.png" alt="DinMægler Logo" width={200} height={200} />
             </Link>
             <ul className="flex items-center gap-10">
-                <li>
+                <li className="hover:text-orange-400">
                     <Link href="/houses">Boliger til salg</Link>
                 </li>
-                <li>
+                <li className="hover:text-orange-400">
                     <Link href="/agents">Mæglere</Link>
                 </li>
-                <li>
+                <li className="hover:text-orange-400">
                     <Link href="/favorit">Mine favoritter</Link>
                 </li>
-                <li>
+                <li className="hover:text-orange-400">
                     <Link href="/contact">Kontakt os</Link>
                 </li>
             </ul>

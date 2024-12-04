@@ -4,7 +4,7 @@ export default function HomeCard() {
     return (
         <article className="flex flex-col bg-white w-fit pb-4">
             <figure>
-                <Image src="/houseForSale.png" alt="hus til salg billede" width={400} height={400}/>
+                <Image src="/houseForSale.png" alt="hus til salg billede" width={450} height={400}/>
             </figure>
             <figcaption className="py-2">
                 <h3 className="font-bold px-4">Klostersengen 234</h3>

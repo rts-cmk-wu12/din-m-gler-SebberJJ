@@ -25,7 +25,7 @@ export default function Footer() {
                 </div>
                 <div>
                   <div className="text-sm text-gray-500">Ring til os</div>
-                  <a href="tel:+4570704000" className="hover:underline">
+                  <a href="tel:+4570704000" className="hover:text-orange-400 hover:underline">
                     +45 7070 4000
                   </a>
                 </div>
@@ -36,7 +36,7 @@ export default function Footer() {
                 </div>
                 <div>
                   <div className="text-sm text-gray-500">Send en mail</div>
-                  <a href="mailto:4000@dinmaegler.com" className="hover:underline">
+                  <a href="mailto:4000@dinmaegler.com" className="hover:text-orange-400 hover:underline">
                     4000@dinmaegler.com
                   </a>
                 </div>
