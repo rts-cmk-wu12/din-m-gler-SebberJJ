@@ -1,24 +1,16 @@
 interface HouseDetailProps {
     id: string;
-    adress1: string;
     basementsize: number;
     built: number;
-    city: string;
-    cost: number | string;
-    description: string;
+    cost: number;
     energylabel: string;
-    gross: number | string;
-    lat: number;
+    gross: number;
     livingspace: number;
-    long: number;
     lotsize: number;
-    netto: number | string;
-    payment: number | string;
-    postalcode: number;
-    price: number | string;
+    netto: number;
+    payment: number;
     remodel: number;
     rooms: string;
-    type: string;
 }
 
 export default function HouseDetail2(props: HouseDetailProps) {
@@ -33,11 +25,11 @@ export default function HouseDetail2(props: HouseDetailProps) {
                 </div>
                 <div className="flex justify-between">
                     <p>Boligareal:</p>
-                    <p>{props.livingspace}</p>
+                    <p>{props.livingspace} m²</p>
                 </div>
                 <div className="flex justify-between">
                     <p>Grundareal:</p>
-                    <p>{props.lotsize}</p>
+                    <p>{props.lotsize} m²</p>
                 </div>
                 <div className="flex justify-between">
                     <p>Rum/værelser:</p>
@@ -51,7 +43,7 @@ export default function HouseDetail2(props: HouseDetailProps) {
             <div className="flex flex-col w-1/5">
                 <div className="flex justify-between">
                     <p>Kælder:</p>
-                    <p>{props.basementsize}</p>
+                    <p>{props.basementsize} m²</p>
                 </div>
                 <div className="flex justify-between">
                     <p>Byggeår:</p>
@@ -69,19 +61,19 @@ export default function HouseDetail2(props: HouseDetailProps) {
             <div className="flex flex-col w-1/5">
                 <div className="flex justify-between">
                     <p>Udbetaling:</p>
-                    <p>{props.payment}</p>
+                    <p>Kr. {props.payment.toLocaleString()}</p>
                 </div>
                 <div className="flex justify-between">
                     <p>Brutto ex ejerudgift:</p>
-                    <p>{props.gross}</p>
+                    <p>Kr. {props.gross.toLocaleString()}</p>
                 </div>
                 <div className="flex justify-between">
                     <p>Netto ex ejerudgift:</p>
-                    <p>{props.netto}</p>
+                    <p>Kr. {props.netto.toLocaleString()}</p>
                 </div>
                 <div className="flex justify-between">
                     <p>Ejerudgifter:</p>
-                    <p>{props.cost}</p>
+                    <p>Kr. {props.cost.toLocaleString()}</p>
                 </div>
             </div>
         </div>

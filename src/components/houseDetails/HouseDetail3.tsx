@@ -14,26 +14,7 @@ interface Agent {
 }
 
 interface HouseDetailProps {
-    id: string;
-    adress1: string;
-    basementsize: number;
-    built: number;
-    city: string;
-    cost: number | string;
     description: string;
-    energylabel: string;
-    gross: number | string;
-    lat: number;
-    livingspace: number;
-    long: number;
-    lotsize: number;
-    netto: number | string;
-    payment: number | string;
-    postalcode: number;
-    price: number | string;
-    remodel: number;
-    rooms: string;
-    type: string;
     agent: Agent;
 }
 
