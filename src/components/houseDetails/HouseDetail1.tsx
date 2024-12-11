@@ -44,7 +44,7 @@ export default function HouseDetail1(props: HouseDetailProps) {
     }
 
     return (
-        <div className="flex justify-around items-center px-56 py-2">
+        <div className="flex justify-around items-center px-56 py-2 gap-12">
             <Modal isOpen={isModalOpen} imageSrc={imageSrc} onClose={handleCloseModal} />
             <div className="flex flex-col">
                 <p className="text-lg text-blue-950 font-bold">{props.address}</p>
