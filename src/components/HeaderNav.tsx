@@ -1,7 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
+import { getCookie } from "cookies-next";
+import { cookies } from "next/headers";
 
-export default function HeaderNav() {
+
+export default async function HeaderNav() {
+    const userid = await getCookie("dm_userid", { cookies })
+    console.log(userid)
+
     return (
         <nav className="flex w-full justify-around items-center h-16 border px-32">
             <Link href="/">
@@ -14,9 +20,13 @@ export default function HeaderNav() {
                 <li className="hover:text-orange-400">
                     <Link href="/agents">Mæglere</Link>
                 </li>
-                <li className="hover:text-orange-400">
-                    <Link href="/favorit">Mine favoritter</Link>
-                </li>
+                {userid ? (
+                    <li className="hover:text-orange-400">
+                        <Link href="/favorites">Mine favoritter</Link>
+                    </li>
+                ) : (
+                    <></>
+                )}
                 <li className="hover:text-orange-400">
                     <Link href="/contact">Kontakt os</Link>
                 </li>

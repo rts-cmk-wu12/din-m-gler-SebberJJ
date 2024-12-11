@@ -3,12 +3,16 @@ import { FaPhoneAlt } from "react-icons/fa";
 import { FaUser } from "react-icons/fa";
 import HeaderNav from "./HeaderNav";
 import Link from "next/link";
+import { cookies } from "next/headers";
+import { getCookie } from "cookies-next/server";
+import Logout from "./login/Logout";
 
-export default function Header()  {
+export default async function Header()  {
+    const userid = await getCookie("dm_userid", { cookies })
+
     return (
         <header className="flex flex-col w-full">
             <div className="flex flex-col justify-center">
-
             <div className="bg-blue-950 h-10 flex gap-4 justify-around">
                 <div className="flex gap-4">
                     <div className="flex items-center gap-2">
@@ -22,7 +26,11 @@ export default function Header()  {
                 </div>
                 <div className="flex items-center gap-2">
                     <FaUser color="white" />
-                    <Link className="text-white hover:text-orange-400" href="/login">Login</Link>
+                    {userid ? (
+                        <Logout />
+                    ) : (
+                        <Link className="text-white hover:text-orange-400" href="/login">Login</Link>
+                    )}
                 </div>
             </div>
             <HeaderNav />
