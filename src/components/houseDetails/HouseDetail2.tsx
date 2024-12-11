@@ -58,7 +58,7 @@ export default function HouseDetail2(props: HouseDetailProps) {
                     <p>{props.energylabel}</p>
                 </div>
             </div>
-            <div className="flex flex-col w-1/5">
+            <div className="flex flex-col w-3/12">
                 <div className="flex justify-between">
                     <p>Udbetaling:</p>
                     <p>Kr. {props.payment.toLocaleString()}</p>
