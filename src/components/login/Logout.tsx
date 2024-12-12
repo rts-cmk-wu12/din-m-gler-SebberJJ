@@ -7,6 +7,8 @@ export default function Logout() {
     function HandleLogout() {
         deleteCookie("dm_userid")
         deleteCookie("dm_token")
+
+        window.location.reload()
     }
 
     return (
