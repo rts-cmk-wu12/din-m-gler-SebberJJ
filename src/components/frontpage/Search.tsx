@@ -6,7 +6,7 @@ export default function Search() {
                 <label className="text-black px-10 pb-2">Hvad skal din næste bolig indeholde</label>
                 <div className="flex items-center justify-center w-full gap-2">
                     <input className="h-10 w-3/4 px-3 border" type="search" placeholder="Søg på fx glaskeramisk komfur, brygges, kælder eller lignende"/>
-                    <button className="bg-blue-950 h-10 px-10 text-white">Søg</button>
+                    <button className="bg-blue-950 h-10 px-10 text-white hover:text-orange-400">Søg</button>
                 </div>
             </form>
         </div>
