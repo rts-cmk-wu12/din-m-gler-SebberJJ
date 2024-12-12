@@ -78,6 +78,7 @@ export const HouseProvider = ({ children }: { children: React.ReactNode }) => {
         try {
             const result = await fetch(`https://dinmaegler.onrender.com/homes`)
             const data: Home[] = await result.json()
+            console.log(data)
             setHouses(data)
         } catch (error) {
             console.error("Failed to fetch houses:", error)

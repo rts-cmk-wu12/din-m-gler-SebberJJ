@@ -10,9 +10,6 @@ export default function SelectedHomesContainer() {
             </div>
             <div className="w-full grid grid-cols-2 grid-rows-2 gap-4">
                 <HomeCard />
-                <HomeCard />
-                <HomeCard />
-                <HomeCard />
             </div>
             <Link href="/houses" className="bg-blue-950 text-white py-2 px-4 hover:text-orange-400">Se alle boliger</Link>
         </div>
