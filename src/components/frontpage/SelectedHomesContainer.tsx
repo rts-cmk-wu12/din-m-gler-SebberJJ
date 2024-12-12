@@ -14,7 +14,7 @@ export default function SelectedHomesContainer() {
                 <HomeCard />
                 <HomeCard />
             </div>
-            <Link href="/houses" className="bg-blue-950 text-white py-2 px-4">Se alle boliger</Link>
+            <Link href="/houses" className="bg-blue-950 text-white py-2 px-4 hover:text-orange-400">Se alle boliger</Link>
         </div>
     )
 }

@@ -13,7 +13,7 @@ export default function CoworkerContainer() {
                 <Coworkers />
                 <Coworkers />
             </div>
-            <Link href="/agents" className="bg-blue-950 text-white py-2 px-4">Se alle mæglere</Link>
+            <Link href="/agents" className="bg-blue-950 text-white py-2 px-4 hover:text-orange-400">Se alle mæglere</Link>
         </div>
     )
 }

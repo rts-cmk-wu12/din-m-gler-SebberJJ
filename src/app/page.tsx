@@ -18,7 +18,7 @@ export default function Home() {
       <section className="bg-gray-100 w-full flex justify-center items-center pt-20 mt-16 pb-20">
         <SelectedHomesContainer />
       </section>
-      <section className="bg-gray-800 w-full">
+      <section className="w-full bg-[url('/subscribeBG.png')]">
         <Newsletter />
       </section>
       <section className="flex pt-16">
