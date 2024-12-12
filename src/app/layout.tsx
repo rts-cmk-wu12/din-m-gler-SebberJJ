@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { HouseProvider } from "@/context/fetchHouseProvider";
 
 export const metadata: Metadata = {
   title: "DinMægler",
@@ -17,7 +18,9 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Header />
-        {children}
+        <HouseProvider>
+          {children}
+        </HouseProvider>
       <Footer />
       </body>
     </html>

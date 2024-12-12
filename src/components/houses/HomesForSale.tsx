@@ -3,8 +3,8 @@
 import { useState, useEffect, ChangeEvent } from "react";
 import Image from "next/image";
 import { LuDot } from "react-icons/lu";
-import Headline from "../Headline";
 import Link from "next/link";
+import { useHouse } from "@/context/fetchHouseProvider";
 
 interface Agent {
     name: string;
@@ -74,22 +74,8 @@ interface Home {
 }
 
 export default function HomesForSale() {
-    const [houses, setHouses] = useState<Home[]>([])
-    const [priceRange, setPriceRange] = useState<number>(12000000) // Max pris sat til 12 millioner.
-
-    const fetchHouses = async () => {
-        try {
-            const result = await fetch("https://dinmaegler.onrender.com/homes")
-            const data: Home[] = await result.json()
-            setHouses(data)
-        } catch (error) {
-            console.error("Failed to fetch dinmaegler api:", error)
-        }
-    }
-
-    useEffect(() => {
-        fetchHouses()
-    }, [])
+    const houses = useHouse()
+    const [priceRange, setPriceRange] = useState<number>(12000000) // Max pris er sat til 12 millioner ligesom figmaen er.
 
     const handlePriceChange = (event: ChangeEvent<HTMLInputElement>) => {
         setPriceRange(Number(event.target.value))
