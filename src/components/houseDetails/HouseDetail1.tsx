@@ -6,6 +6,7 @@ import { CiLocationOn } from "react-icons/ci";
 import { CiHeart } from "react-icons/ci";
 import { useState } from "react";
 import Modal from "./Modal";
+import { getCookie } from "cookies-next";
 
 export interface ImageSource {
     name: string;
@@ -23,6 +24,7 @@ export interface ImageSource {
 }
 
 interface HouseDetailProps {
+    id: string;
     address: string;
     by: string;
     price: number;
@@ -33,6 +35,8 @@ interface HouseDetailProps {
 export default function HouseDetail1(props: HouseDetailProps) {
     const [isModalOpen, setModalOpen] = useState(false)
     const [imageSrc, setImageSrc] = useState<ImageSource[] | null>(null)
+    const token = getCookie("dm_token")
+    const userid = getCookie("dm_userid")
     
     const handleOpenModal = () => {
       setImageSrc(props.images)
@@ -43,8 +47,29 @@ export default function HouseDetail1(props: HouseDetailProps) {
       setModalOpen(false)
     }
 
+    async function addFavorit() {
+            try {
+                await fetch(
+                    `https://dinmaegler.onrender.com/users/${userid}`,
+                    {
+                        method: "PUT",
+                        headers: {
+                            "Content-Type": "application/json",
+                            Authorization: `Bearer ${token}`,
+                        },
+                        body: JSON.stringify({
+                            homes: [props.id],
+                        }),
+                    }
+                )
+
+            } catch (error) {
+                console.error("Fail with adding house to your favorites:", error)
+            }
+            }
+
     return (
-        <div className="flex justify-around items-center px-56 py-2 gap-12">
+        <div className="flex justify-center items-center w-full py-2 gap-[19rem]">
             <Modal isOpen={isModalOpen} imageSrc={imageSrc} onClose={handleCloseModal} />
             <div className="flex flex-col">
                 <p className="text-lg text-blue-950 font-bold">{props.address}</p>
@@ -56,7 +81,9 @@ export default function HouseDetail1(props: HouseDetailProps) {
                 </button>
                 <IoLayersOutline size={36} />
                 <CiLocationOn size={36} />
-                <CiHeart size={36} />
+                <button onClick={addFavorit} className="focus:text-red-400">
+                    <CiHeart size={36} />
+                </button>
             </div>
             <div>
                 <p className="text-2xl text-blue-950 font-bold">Kr. {props.price.toLocaleString()}</p>

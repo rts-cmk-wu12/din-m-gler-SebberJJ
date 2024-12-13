@@ -32,7 +32,7 @@ export default function HouseDetail3(props: HouseDetailProps) {
                 <div className="flex flex-col p-4 gap-4">
                     <span className = "text-2xl font-semibold">{props.agent.name}</span>
                     <span className="text-gray-400">{props.agent.title}</span>
-                    <div className="border-b-2 border-gray-300 w-16"></div>
+                    <span className="border-b-2 border-gray-300 w-16"></span>
                     <div className="flex items-center gap-2">
                         <FaPaperPlane size={24}/>
                         <a className="hover:text-orange-400 text-base"
