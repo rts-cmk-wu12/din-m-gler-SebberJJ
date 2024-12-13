@@ -7,7 +7,7 @@ export default function Coworkers() {
         <>
             <article className="flex flex-col bg-white w-fit pb-4 border">
                 <figure>
-                    <Image src="/coworker.png" alt="medarbejder billede" width={250} height={250}/>
+                    <Image src="/coworker.png" alt="medarbejder billede" width={275} height={250}/>
                 </figure>
                 <figcaption className="pt-4">
                     <h3 className="font-bold px-4 text-center">Grant Marshall</h3>

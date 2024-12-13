@@ -5,6 +5,7 @@ import HouseDetail2 from "@/components/houseDetails/HouseDetail2";
 import HouseDetail3 from "@/components/houseDetails/HouseDetail3";
 import Image from "next/image";
 import { useState, useEffect } from "react";
+import React from "react";
 
 interface Agent {
     name: string;
@@ -72,13 +73,14 @@ interface Home {
     type: string;
 }
 
-export default function House({ params }: { params: { id: string }; home: Home; }) {
+export default function House({ params }: { params: { id: string } }) {
     const [house, setHouse] = useState<Home | null>(null)
+    const { id } = React.use(params)
 
     const fetchHouse = async () => {
         try {
-            const result = await fetch(`https://dinmaegler.onrender.com/homes/${params.id}`)
-            const data: Home = await result.json()
+            const response = await fetch(`https://dinmaegler.onrender.com/homes/${id}`)
+            const data: Home = await response.json()
             setHouse(data)
         } catch(error) {
             console.error("Failed to fetch dinmaegler api:", error)
