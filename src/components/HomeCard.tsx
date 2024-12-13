@@ -2,6 +2,7 @@
 
 import { useHouse } from "@/context/fetchHouseProvider";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function HomeCard() {
     const houseForSale = useHouse()
@@ -17,12 +18,14 @@ export default function HomeCard() {
         <>
             {houseForSale.slice(0, 4).map((home: any) => (
                 <article key={home.id} className="flex flex-col bg-white w-fit pb-4 shadow-md">
-                    <figure>
-                        <Image src="/houseForSale.png" alt="hus til salg billede" width={450} height={400} />
-                    </figure>
-                    <figcaption className="py-1">
-                        <h3 className="font-bold px-4">{home.adress1}</h3>
-                    </figcaption>
+                    <Link href={`/house/` + home.id}>
+                        <figure>
+                            <Image src="/houseForSale.png" alt="hus til salg billede" width={450} height={400} />
+                        </figure>
+                        <figcaption className="py-1">
+                            <h3 className="font-bold px-4">{home.adress1}</h3>
+                        </figcaption>
+                    </Link>
                     <div className="flex flex-col gap-4 px-4 py-2">
                         <span>{home.postalcode} {home.city}</span>
                         <p>

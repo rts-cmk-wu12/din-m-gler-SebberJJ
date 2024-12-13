@@ -92,9 +92,12 @@ export default function HomesForSale() {
   return (
     <div>
       <div className="flex flex-col w-full items-center justify-center pt-20">
-        <h2 className="text-blue-950 text-lg font-bold pr-[43.8rem] pb-3">
-          Søg efter dit drømmehus
-        </h2>
+        <div>
+            <h2 className="text-blue-950 text-lg font-bold pr-[47rem] pb-1">
+            Søg efter dit drømmehus
+            </h2>
+            <div className="border-b-4 border-blue-950 w-10 mb-6"></div>
+        </div>
         <div className="flex gap-x-10 w-full justify-center items-center">
           <div className="w-1/3 flex flex-col pb-1">
             <label className="mb-2">Ejendomstype</label>
@@ -134,9 +137,9 @@ export default function HomesForSale() {
                 <Image
                   src={house.images[0]?.url || ""}
                   alt={house.adress1}
-                  width={450}
+                  width={475}
                   height={267}
-                  style={{ width: "450px", maxHeight: "267px" }}
+                  style={{ width: "475px", maxHeight: "267px" }}
                 />
               </figure>
               <figcaption className="py-2">
@@ -147,7 +150,7 @@ export default function HomesForSale() {
               <span>
                 {house.postalcode} {house.city}
               </span>
-              <div className="flex flex-row w-full">
+              <div className="flex flex-row w-full gap-x-1">
                 <strong className="flex items-center">
                   {house.type} •
                 </strong>

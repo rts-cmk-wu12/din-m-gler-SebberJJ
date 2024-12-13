@@ -1,7 +1,7 @@
 "use server"
 
-import { getCookie } from "cookies-next/server"
-import { cookies } from "next/headers"
+import { getCookie } from "cookies-next/server";
+import { cookies } from "next/headers";
 
 export default async function UserInfo() {
     const token = getCookie("dm_token", { cookies })

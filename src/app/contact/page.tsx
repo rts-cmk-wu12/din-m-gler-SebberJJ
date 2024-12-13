@@ -10,9 +10,10 @@ export default function contact() {
         <div className="flex gap-8 pb-6 items-center justify-center">
           <section>
             <div className="flex flex-col w-4/6">
-              <h2 className="text-2xl font-semibold mb-2">
+              <h2 className="text-2xl font-semibold mb-4">
                 Vi sidder klar til at besvare dine spørgsmål
               </h2>
+              <span className="border-b-4 border-blue-950 w-20 mb-4"></span>
               <p className="text-gray-600 mb-8">
                 Der kan opstå tvivl om mange ting og man gerne vil eller er i
                 gang med at sælge sin bolig. Vores medarbejdere står klar alle
