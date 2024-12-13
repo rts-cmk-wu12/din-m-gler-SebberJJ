@@ -20,7 +20,7 @@ export default function HomeCard() {
                 <article key={home.id} className="flex flex-col bg-white w-fit pb-4 shadow-md">
                     <Link href={`/house/` + home.id}>
                         <figure>
-                            <Image src="/houseForSale.png" alt="hus til salg billede" width={450} height={400} />
+                            <Image src={home.images[0].url} alt="hus til salg billede" width={425} height={200} className="max-h-[200px]" />
                         </figure>
                         <figcaption className="py-1">
                             <h3 className="font-bold px-4">{home.adress1}</h3>
